@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+         #
+#    By: peters <peters@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 16:51:34 by pehenri2          #+#    #+#              #
-#    Updated: 2023/07/19 18:30:35 by pehenri2         ###   ########.fr        #
+#    Updated: 2023/08/01 18:21:38 by peters           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,9 @@ FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 		ft_strrchr.c ft_strncmp.c ft_memchr.c  \
 		ft_memcmp.c  ft_strnstr.c ft_atoi.c    \
 		ft_calloc.c  ft_strdup.c  ft_substr.c  \
-		
-
+		ft_strjoin.c ft_strtrim.c              \
+		ft_itoa.c        
+#ft_split depois de strtrim
 OBJ = $(patsubst %.c, %.o, $(FILES))
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
@@ -42,4 +43,9 @@ re: fclean all
 
 all: $(NAME)
 
-.PHONY: clean fclean re all
+#temporary
+main:
+	$(CC) -o main main.c $(NAME) && ./main
+#temporary
+
+.PHONY: clean fclean re all main
