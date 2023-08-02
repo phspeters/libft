@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 17:59:35 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/08/02 17:23:45 by pehenri2         ###   ########.fr       */
+/*   Created: 2023/08/02 17:34:05 by pehenri2          #+#    #+#             */
+/*   Updated: 2023/08/02 17:37:36 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		i;
-	int		s;
-	int		result;
-
-	s = 1;
-	i = 0;
-	result = 0;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-')
-	{
-		s = -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-		i++;
-	while (ft_isdigit(nptr[i]))
-	{
-		result = (nptr[i] - '0') + (result * 10);
-		i++;
-	}
-	return (result * s);
+	write(fd, &c, 1);
 }

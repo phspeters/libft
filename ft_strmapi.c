@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 17:59:35 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/08/02 17:23:45 by pehenri2         ###   ########.fr       */
+/*   Created: 2023/08/02 17:32:34 by pehenri2          #+#    #+#             */
+/*   Updated: 2023/08/02 17:47:39 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*str;
 	int		i;
-	int		s;
-	int		result;
 
-	s = 1;
+	str = malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
 	i = 0;
-	result = 0;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-')
+	if (str != NULL)
 	{
-		s = -1;
-		i++;
+		while (s[i] != '\0')
+		{
+			str[i] = f(i, s[i]);
+			i++;
+		}
+		str[i] = '\0';
 	}
-	else if (nptr[i] == '+')
-		i++;
-	while (ft_isdigit(nptr[i]))
-	{
-		result = (nptr[i] - '0') + (result * 10);
-		i++;
-	}
-	return (result * s);
+	return (str);
 }

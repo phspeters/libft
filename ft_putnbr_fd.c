@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 17:59:35 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/08/02 17:23:45 by pehenri2         ###   ########.fr       */
+/*   Created: 2023/08/02 17:35:11 by pehenri2          #+#    #+#             */
+/*   Updated: 2023/08/02 17:55:35 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	int		s;
-	int		result;
+	long	nbr;
 
-	s = 1;
-	i = 0;
-	result = 0;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-')
+	nbr = n;
+	if (n < 0)
 	{
-		s = -1;
-		i++;
+		ft_putchar_fd('-', fd);
+		nbr = -nbr;
 	}
-	else if (nptr[i] == '+')
-		i++;
-	while (ft_isdigit(nptr[i]))
+	if (nbr > 9)
 	{
-		result = (nptr[i] - '0') + (result * 10);
-		i++;
+		ft_putnbr_fd(nbr / 10, fd);
 	}
-	return (result * s);
+	ft_putchar_fd(nbr % 10 + '0', fd);
 }

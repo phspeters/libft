@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peters <peters@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:02:33 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/08/01 17:46:12 by peters           ###   ########.fr       */
+/*   Updated: 2023/08/02 17:56:29 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
+
+int		ft_isspace(char c);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -42,14 +45,14 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-// char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
-// char 	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-// void 	ft_striteri(char *s, void (*f)(unsigned int, char*));
-// void 	ft_putchar_fd(char c, int fd);
-// void 	ft_putstr_fd(char *s, int fd);
-// void 	ft_putendl_fd(char *s, int fd);
-// void 	ft_putnbr_fd(int n, int fd);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 typedef struct s_list
 {

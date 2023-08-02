@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peters <peters@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 09:56:32 by peters            #+#    #+#             */
-/*   Updated: 2023/08/01 19:14:52 by peters           ###   ########.fr       */
+/*   Updated: 2023/08/02 17:56:37 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,12 @@ char	*ft_itoa(int n)
 	if (ascii == NULL)
 		return (NULL);
 	ascii[len] = '\0';
-	while (nbr > 0)
+	while (len > 0)
 	{
-		len--;
-		ascii[len] = (nbr % 10) + '0';
+		ascii[--len] = (nbr % 10) + '0';
 		nbr = nbr / 10;
 	}
 	if (n < 0)
 		ascii[0] = '-';
-	if (n == 0)
-		ascii[0] = '0';
 	return (ascii);
 }
