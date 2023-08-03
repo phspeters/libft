@@ -6,7 +6,7 @@
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:24:52 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/08/02 18:30:18 by pehenri2         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:17:20 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *(lst);
-	*lst = new;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		new->next = *(lst);
+		*lst = new;
+	}
 }

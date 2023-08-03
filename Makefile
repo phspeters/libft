@@ -6,7 +6,7 @@
 #    By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 16:51:34 by pehenri2          #+#    #+#              #
-#    Updated: 2023/08/02 18:32:51 by pehenri2         ###   ########.fr        #
+#    Updated: 2023/08/03 16:36:10 by pehenri2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,20 +24,23 @@ FILES = ft_isalpha.c    ft_isdigit.c    ft_isalnum.c     \
 		ft_putchar_fd.c ft_putstr_fd.c  ft_putendl_fd.c  \
 		ft_putnbr_fd.c  ft_isspace.c    
 FILES_BONUS =	ft_lstnew.c    ft_lstadd_front.c  ft_lstsize.c    \
-				#ft_lstlast.c   ft_lstadd_back.c   ft_lstdelone.c  \
-				ft_lstclear.c  ft_lstiter.c       ft_lstmap.c
+				ft_lstlast.c   ft_lstadd_back.c   ft_lstdelone.c  \
+				ft_lstclear.c  #ft_lstiter.c       ft_lstmap.c
 OBJ = $(FILES:.c=.o)
 OBJ_BONUS = $(FILES_BONUS:.c=.o)
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
 
 $(NAME): $(OBJ)
-	$(CC) -c $(FLAGS) $(FILES) $(NAME:a=h)
-	ar -rcs $(NAME) $(OBJ) $(NAME:a=h).gch
+	ar -rcs $(NAME) $(OBJ) 
+#$(NAME:a=h).gch
 
-bonus: $(OBJ) $(OBJ_BONUS)
-	$(CC) -c $(FLAGS) $(FILES) $(FILES_BONUS) $(NAME:a=h)
-	ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS) $(NAME:a=h).gch
+bonus: $(OBJ_BONUS)
+	ar -rcs $(NAME) $(OBJ_BONUS)
+#$(NAME:a=h).gch
+
+%.o: %.c
+    $(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)

@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 18:47:56 by peters            #+#    #+#             */
-/*   Updated: 2023/08/03 15:25:29 by pehenri2         ###   ########.fr       */
+/*   Created: 2023/08/03 15:31:30 by pehenri2          #+#    #+#             */
+/*   Updated: 2023/08/03 16:36:13 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	*joined;
-	int		i;
-	int		j;
+	t_list	*temp;
+	t_list	*current;
 
-	joined = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
-	i = 0;
-	while (s1[i])
+	current = *lst;
+	while (current != NULL)
 	{
-		joined[i] = s1[i];
-		i++;
+		temp = current;
+		del(current->content);
+		current = current->next;
+		free(temp);
 	}
-	j = 0;
-	while (s2[j])
-	{
-		joined[i + j] = s2[j];
-		j++;
-	}
-	joined[i + j] = '\0';
-	return (joined);
+	*lst = NULL;
 }

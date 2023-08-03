@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 18:47:56 by peters            #+#    #+#             */
-/*   Updated: 2023/08/03 15:25:29 by pehenri2         ###   ########.fr       */
+/*   Created: 2023/08/03 10:36:10 by pehenri2          #+#    #+#             */
+/*   Updated: 2023/08/03 11:42:32 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*joined;
-	int		i;
-	int		j;
-
-	joined = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
-	i = 0;
-	while (s1[i])
-	{
-		joined[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[j])
-	{
-		joined[i + j] = s2[j];
-		j++;
-	}
-	joined[i + j] = '\0';
-	return (joined);
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
