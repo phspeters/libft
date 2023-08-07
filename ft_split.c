@@ -6,7 +6,7 @@
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 15:39:52 by peters            #+#    #+#             */
-/*   Updated: 2023/08/02 17:29:20 by pehenri2         ###   ########.fr       */
+/*   Updated: 2023/08/07 15:15:51 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	count_words(const char *string, const char delimiter)
 {
 	int	word_count;
 
-	word_count = 0;
-	if (*string == '\0')
+	if (*string == '\0' || string == NULL)
 		return (0);
-	while (*string)
+	word_count = 0;
+	while (*string != '\0')
 	{
 		if (*string != delimiter)
 		{
