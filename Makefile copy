@@ -6,7 +6,7 @@
 #    By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 16:51:34 by pehenri2          #+#    #+#              #
-#    Updated: 2023/08/07 11:24:14 by pehenri2         ###   ########.fr        #
+#    Updated: 2023/08/07 11:19:50 by pehenri2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,10 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 bonus: $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJ_BONUS)
+
+$(OBJ_BONUS):
+	cc -Wall -Wextra -Werror -c $(@:.o=.c) -o $@
+	ar rcs $(NAME) $@
 
 %.o: %.c libft.h
 	$(CC) $(FLAGS) -c $< -o $@
