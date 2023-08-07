@@ -6,7 +6,7 @@
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:02:33 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/08/07 10:40:44 by pehenri2         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:59:46 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+//New functions
 int		ft_isspace(char c);
 
+//Mandatory part 1 functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -42,6 +44,7 @@ int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 
+//Mandatory part 2 functions
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -54,12 +57,12 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
+//Bonus part functions
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }			t_list;
-
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
