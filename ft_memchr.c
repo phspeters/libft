@@ -6,7 +6,7 @@
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:33:22 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/07/19 21:02:18 by pehenri2         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:19:04 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	if (s == NULL)
 		return (NULL);
-	ptr = (void *)s;
+	ptr = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{

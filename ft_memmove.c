@@ -6,7 +6,7 @@
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:45:48 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/07/19 18:20:31 by pehenri2         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:07:18 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		temp[i] = ((char *)src)[i];
+		temp[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	i = 0;
 	while (i < n)
 	{
-		((char *)dest)[i] = temp[i];
+		((unsigned char *)dest)[i] = temp[i];
 		i++;
 	}
 	free (temp);

@@ -6,7 +6,7 @@
 #    By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/17 16:51:34 by pehenri2          #+#    #+#              #
-#    Updated: 2023/08/07 15:09:28 by pehenri2         ###   ########.fr        #
+#    Updated: 2023/08/08 09:57:47 by pehenri2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FILES_BONUS =	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c	\
 				ft_lstclear.c	ft_lstiter.c		ft_lstmap.c
 OBJ = $(FILES:.c=.o)
 OBJ_BONUS = $(FILES_BONUS:.c=.o)
-CC = gcc
+CC = cc
 FLAGS = -Wall -Werror -Wextra
 
 $(NAME): $(OBJ)
