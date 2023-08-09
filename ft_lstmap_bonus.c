@@ -6,7 +6,7 @@
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 10:22:15 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/08/08 16:49:06 by pehenri2         ###   ########.fr       */
+/*   Updated: 2023/08/09 14:12:56 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	new_elem = ft_lstnew(f(lst->content));
 	if (new_elem == NULL)
-	{
-		free(new_elem);
 		return (NULL);
-	}
 	new_lst = new_elem;
 	lst = lst->next;
 	while (lst != NULL)
