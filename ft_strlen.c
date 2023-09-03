@@ -6,13 +6,15 @@
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:34:22 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/07/19 18:33:03 by pehenri2         ###   ########.fr       */
+/*   Updated: 2023/08/24 18:10:20 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	while (str[len])
