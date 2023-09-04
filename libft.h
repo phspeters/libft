@@ -6,7 +6,7 @@
 /*   By: pehenri2 <pehenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:02:33 by pehenri2          #+#    #+#             */
-/*   Updated: 2023/08/08 15:04:52 by pehenri2         ###   ########.fr       */
+/*   Updated: 2023/09/04 18:38:32 by pehenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 
 //Extra functions
 int		ft_isspace(char c);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_putnbr(int n);
+int		ft_putnbr_base(int nbr, char *base);
 
 //Mandatory part 1 functions
 int		ft_isalpha(int c);
@@ -25,7 +29,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
